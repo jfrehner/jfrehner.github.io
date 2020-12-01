@@ -1,0 +1,403 @@
+<!doctype html>
+
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    
+    <meta name="description" content="A checklist based on the Web Content Accessibility Guidelines (WCAG) that helps making a web site accessible.">
+    
+    <link rel="stylesheet" type="text/css" href="/css/styles.css">
+    <link rel="stylesheet" type="text/css" href="/css/syntax-highlighting.css">
+    <link rel="stylesheet" type="text/css" href="/css/line-numbers-rows.css">
+    <link href="https://fonts.googleapis.com/css?family=Lato:900,400|Zilla+Slab:500&display=swap" rel="stylesheet">
+
+    <title>Jonas Frehner - Software Engineering</title>
+
+</head>
+
+<body class="line-numbers">
+<header>
+    <div class="header-container">
+        <h1 class="site-title hidden-mobile"><a href="/">jonas frehner</a></h1>
+        <h1 class="site-title hidden-desktop"><a href="/">jfrehner</a></h1>
+        <nav>
+            <ul>
+                <li><a  href="/"><span class="center">Blog</span></a></li>
+                <li><a  href="/about"><span class="center">About</span></a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
+<main>
+    <div class="site-container">
+        <div class="single-post-container">
+  <h1 class="post-title">A subjective WCAG 2.1 checklist on how to make a web page accessible</h1>
+  
+  <div class="post-metadata">
+    <p>published: 20.12.2019, 10 minute read
+    </p>
+  </div>
+  <div class="post-content">
+    <h3>My Take on WCAG 2.1</h3>
+<p>This only covers the WCAG 2.1 levels A and AA (not AAA) because in the project were I was involved we never aimed at level AAA (even W3 does not recommend that each site should meet level AAA - see also <a href="https://www.w3.org/TR/UNDERSTANDING-WCAG20/conformance.html">the understanding section on WCAG2.0 conformance on the w3-website</a>). For different reasons we concluded that level AAA was not necessary for our site - and also practically not achievable.
+It should also be noted that this list is very subjective and it will in no way grant level AA compliancy. That was never its goal. It is more to be seen as the things that I deemed to be relevant and important when trying to make a site more accessible. I hope that it helps me as a reference guide when I need to make sites accesible in the future - and I hope that you might also profit. You're free to copy the list and use it in your own project.</p>
+<h4>Note</h4>
+<p>Please note that this is a sort of a &quot;living document&quot; in that I might update the list in the future if I find some points in the WCAG-documentation to be worthy of an upgrade/edit/delete. The list should stay mostly the same, but details can change.</p>
+<h4>HTML</h4>
+<table class="checkbox-table">
+  <tbody>
+    <tr>
+      <td>
+        <input type="checkbox" />
+      </td>
+      <td>
+        HTML elements are used according to their specification (e.g. links should not contain any other links, forms should be used properly, etc.)
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <input type="checkbox" />
+      </td>
+      <td>
+        The "autocomplete"-attribute is used properly (even though Chrome seems to break it deliberatly (<a href="https://bugs.chromium.org/p/chromium/issues/detail?id=914451">see this bug report in Chromium<a>)
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <input type="checkbox" />
+      </td>
+      <td>
+        Buttons are used as buttons (they do not navigate) and links are used as links (they navigate)
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <input type="checkbox" />
+      </td>
+      <td>
+        Tabindex is used properly (basically: don't use tabindex of 1 or higher it will get you and your users into issues)
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <input type="checkbox" />
+      </td>
+      <td>
+        The lang-attribute is set with the correct value on the html-element
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <input type="checkbox" />
+      </td>
+      <td>
+        The lang-attribute is set on individual elements where necessary.
+      </td>
+    </tr>
+  </tbody>
+</table>
+<h4>Content &amp; Structure</h4>
+<table class="checkbox-table">
+  <tbody>
+    <tr>
+      <td>
+        <input type="checkbox" />
+      </td>
+      <td>
+        Heading structure is correct - there are no "holes" in the heading levels (so not a h1, then a h3 etc.) and the sequence is logical.
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <input type="checkbox" />
+      </td>
+      <td>
+        Labels are used correctly with inputs (and maybe also with icons, graphics etc. when those elements need further explanation)
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <input type="checkbox" />
+      </td>
+      <td>
+        Each page has a proper title set
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <input type="checkbox" />
+      </td>
+      <td>
+        All elements, needing explanation, have a correct and descriptive text-alternative e.g. images, graphics, etc.
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <input type="checkbox" />
+      </td>
+      <td>
+        Elements that should not be announced by screen-readers are properly hidden (e.g. <img alt="">, or aria-hidden="true" on icons, etc.)
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <input type="checkbox" />
+      </td>
+      <td>
+        The visual order matches the DOM order. If a screen reader user moves through the page he experiences the same structure as sighted users.
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <input type="checkbox" />
+      </td>
+      <td>
+        The tab/keyboard order follows the sequence of the content.
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <input type="checkbox" />
+      </td>
+      <td>
+        There are links present that let you jump directly to the main content (skip links)
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <input type="checkbox" />
+      </td>
+      <td>
+        Repeated content, such as navigation, can be skipped via links
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <input type="checkbox" />
+      </td>
+      <td>
+        Multiple ways exist to reach a web page within a set of pages (e.g. via a navigation, sitemap, search, etc.)
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <input type="checkbox" />
+      </td>
+      <td>
+        Navigation that is present on multiple pages always appears in the same order.
+      </td>
+    </tr>
+  </tbody>
+</table>
+<h4>Forms</h4>
+<table class="checkbox-table">
+  <tbody>
+    <tr>
+      <td>
+        <input type="checkbox" />
+      </td>
+      <td>
+        Form fields have the correct accessible hints about their format.
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <input type="checkbox" />
+      </td>
+      <td>
+        Form fields are labelled correctly (labels are correctly associated with their input fields) (do not only use placeholders to describe what needs to be put in an input field)
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <input type="checkbox" />
+      </td>
+      <td>
+        Form validation errors can easily be navigated to, are descriptive and can be linked to the erroneous form
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <input type="checkbox" />
+      </td>
+      <td>
+        If input errors are detected and suggestions/corrections for the errors are known, they are provided to the user (unless it would threaten security)
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <input type="checkbox" />
+      </td>
+      <td>
+        If a form causes legal commitment, a financial transaction, or modifies or deletes user data on a system, the user has a chance to either reverse the submission once its made, or he can review, correct and confirm the submission (if the user data is checked for errors)
+      </td>
+    </tr>
+  </tbody>
+</table>
+<h4>Keyboard</h4>
+<table class="checkbox-table">
+  <tbody>
+    <tr>
+      <td>
+        <input type="checkbox" />
+      </td>
+      <td>
+        The keyboard focus is visible (outline: none should not happen)
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <input type="checkbox" />
+      </td>
+      <td>
+        Keyboard navigation is never trapped anywhere in the page
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <input type="checkbox" />
+      </td>
+      <td>
+        Keyboard shortcuts are prevented, or, if present, they can a) be turned off, or b) be remapped (to include also non-printable keys like ALT), or c) they are only active when the component has focus.
+      </td>
+    </tr>
+  </tbody>
+</table>
+<h4>Design/UI</h4>
+<table class="checkbox-table">
+  <tbody>
+    <tr>
+      <td>
+        <input type="checkbox" />
+      </td>
+      <td>
+        Contrast for text and interactive elements is sufficient (but is also not too high - this is actually not part of WCAG but I picked the idea up in the "Inclusive Design Patterns" book by Heydon Pickering)
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <input type="checkbox" />
+      </td>
+      <td>
+        Color, shape, visual location, etc. is not the sole mean to convey information, prompting an action etc. As an example don't prompt an action like "If you're interested click the red button"
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <input type="checkbox" />
+      </td>
+      <td>
+        Unless essential for the functionality of the page, the site is not restricted to either landscape or portrait mode
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <input type="checkbox" />
+      </td>
+      <td>
+        No more than three flashes flash in any one second period and the flash is below the general flash and red flash threshold (this is to prevent triggering seizures)
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <input type="checkbox" />
+      </td>
+      <td>
+        There is enough time to complete a process (unless time is an integral part of the process like in an auction). If there is a time limit it can be turned off or be extended
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <input type="checkbox" />
+      </td>
+      <td>
+        Moving, blinking, scrolling or auto-updating content that is presented in parallel to other content can be paused, stopped or hidden
+      </td>
+    </tr>
+  </tbody>
+</table>
+<h4>Audio/Video</h4>
+<table class="checkbox-table">
+  <tbody>
+    <tr>
+      <td>
+        <input type="checkbox" />
+      </td>
+      <td>
+        Audio that plays automatically for at least more than 3 seconds can be paused, stopped, or muted
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <input type="checkbox" />
+      </td>
+      <td>
+        Time-based media (such as prerecorded audio or video) is accessible (e.g. audio has captions)
+      </td>
+    </tr>
+  </tbody>
+</table>
+<h4>Interactions</h4>
+<table class="checkbox-table">
+  <tbody>
+    <tr>
+      <td>
+        <input type="checkbox" />
+      </td>
+      <td>
+        If the viewport is only 320px wide, there is no horizontal scroll bar
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <input type="checkbox" />
+      </td>
+      <td>
+        Text can be resized up to 200% without breaking the layout or the functionality of the page
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <input type="checkbox" />
+      </td>
+      <td>
+        Various text-properties can be changed without loosing functionality or content (e.g. line-height can be resized to 1.5 times the font-size, etc.)
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <input type="checkbox" />
+      </td>
+      <td>
+        Content that is shown on hover is used in an accessible way: it is dismissable, the pointer can be moved on to it without it going away, and the content is shown until the hover is removed
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <input type="checkbox" />
+      </td>
+      <td>
+        Focusing a component or inserting information into an input does not initiate a change of context (e.g. a pop-up window appears suddenly)
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <input type="checkbox" />
+      </td>
+      <td>
+        Status messages (e.g. a small success-message at the top of the screen when something was saved) are programmatically determinable so that they can be presented to the user without having to receive focus.
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+  </div>
+</div>
+
+    </div>
+</main>
+</body>
+
+</html>

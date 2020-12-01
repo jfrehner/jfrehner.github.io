@@ -1,0 +1,82 @@
+<!doctype html>
+
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    
+    <meta name="description" content="A review of the book 'Inclusive Design Patterns' by Heydon Pickering and a short list of its most important takeaways.">
+    
+    <link rel="stylesheet" type="text/css" href="/css/styles.css">
+    <link rel="stylesheet" type="text/css" href="/css/syntax-highlighting.css">
+    <link rel="stylesheet" type="text/css" href="/css/line-numbers-rows.css">
+    <link href="https://fonts.googleapis.com/css?family=Lato:900,400|Zilla+Slab:500&display=swap" rel="stylesheet">
+
+    <title>Jonas Frehner - Software Engineering</title>
+
+</head>
+
+<body class="line-numbers">
+<header>
+    <div class="header-container">
+        <h1 class="site-title hidden-mobile"><a href="/">jonas frehner</a></h1>
+        <h1 class="site-title hidden-desktop"><a href="/">jfrehner</a></h1>
+        <nav>
+            <ul>
+                <li><a  href="/"><span class="center">Blog</span></a></li>
+                <li><a  href="/about"><span class="center">About</span></a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
+<main>
+    <div class="site-container">
+        <div class="single-post-container">
+  <h1 class="post-title">Notes and Review of 'Inclusive Design Patterns' by Heydon Pickering</h1>
+  
+  <div class="post-metadata">
+    <p>published: 20.12.2019, 6 minute read
+    </p>
+  </div>
+  <div class="post-content">
+    <h3>Introduction</h3>
+<p>My project that I currently work on puts a lot of focus on accessibility. Since I didn’t have any knowledge in that area (apart from that it has something to do with these “aria-“-attributes you sometimes see), I was looking for resources that could help me expand my know-how. Apart from the “official” standards and guidelines like the “Web Content Accessibility Guidelines” (WCAG), I found the <a href="https://www.smashingmagazine.com/ebook-bundles/accessibility-ebook-bundle-3-ebooks/">“Accessibility eBook Bundle” sold by Smashing Magazine</a>. One part of this bundle is the book “Inclusive Design Patterns – Coding Accessibility Into Web Design” by Heydon Pickering. I bought the bundle, read the book (and the other two as well 😊) and really liked it. So here comes my short review about it and a subjective list of the most important takeaways of the book.</p>
+<h3>Short Review about “Inclusive Design Patterns” by Heydon Pickering</h3>
+<p>I really liked this book as it gives sometimes a very thorough perspective on specific challenges that a web developer might encounter when trying to make a web page accessible. The author (Heydon Pickering) looks at different problems and widgets (such as a blog post, a list of products or how to implement accessible navigation on a site) and explores each of them and its solution in great detail. It is worth noting that the book is not only giving theoretical background or describing possible solutions but always presents concrete technical solutions – so you’ll see a lot of CSS, HTML and JavaScript. I did appreciate the specific examples as I always had something that I can potentially reuse or come back to, when I need an idea on how to solve an accessibility challenge in my day-to-day work.
+Spread across the book you’ll find a lot of recommendations that can be applied apart from the currently discussed case study. As an example, in the chapter about the paragraph Heydon Pickering mentions that every keyboard-accessible element should be firstly, focusable, secondly the focusable element needs to be visible, and thirdly the focus state of the element needs to be visible. This is a very useful and broadly applicable advice. I really liked looking out for these “nuggets” and expand my accessibility know-how bit by bit as I found them. So in the next section, I try to list my most important takeaways from this book.</p>
+<h3>My most important takeaways about accessibility from the book “Inclusive Design Patterns” by Heydon Pickering</h3>
+<ul>
+<li>The browser itself is an interface that can be augmented and configured by our users.</li>
+<li><strong>Put a lang-attribute on the html-element and on individual elements</strong>, where it makes sense. A short note form my side: <a href="https://html.spec.whatwg.org/multipage/dom.html#the-lang-and-xml:lang-attributes">The specification states</a> that the attribute “specifies the primary language for the element's contents and for any of the element's attributes that contain text.” If it is omitted, then the lang-attribute of its parent element (if any) will define the language of the element.</li>
+<li><strong>Don’t prevent zooming</strong> in the <meta name=”viewport”>-element</li>
+<li><strong>Proportional sizing</strong>: Set font-size, padding and margin proportionally by using rem or em. Don’t set fixed sizes since the user would not be able to zoom – well, technically the user is still able to, but it would break the layout.</li>
+<li><strong>Keep the extreme situations in mind</strong>: An interesting statement is found on page 50: “<em>(…) designing first for users in extreme situations helps us better serve everyone. (…) However, it’s important not to think about extreme cases in isolation and to target specific groups.</em>” As an example, Heydon Pickering mentions the performance of a web app: if we design/create our web apps with the extreme situation in mind (low bandwidth) it will benefit all our users since the web app will perform better. I recently read another book about designing for “extreme cases” (or “stress cases” as the authors put it): “Designing for Real Life” by Eric Meyer and Sara Wachter-Boettcher. Even though I’m a bit split whether I like the book or not (it feels a bit lengthy/wordy to me), I really appreciated the idea of “stress cases” and designing for them so that all our users benefit from the developed solutions.</li>
+<li><strong>Regarding typesetting</strong>, the author makes a couple of recommendations:
+<ul>
+<li>don’t use justification as it most possibly makes our word spacing very uneven,</li>
+<li>make your lines between 45 and 75 characters long,</li>
+<li>leading should be 1.5 times the size of the font-size (and again: set it proportionally and do not use a fixed size line-height).</li>
+</ul>
+</li>
+<li><strong>Contrast should neither be to low nor too high</strong>. Reading the “Web Content Accessibility Guidelines”, I initially thought that contrast could only be too low, but apparently it can also be too high.</li>
+<li><strong>Don’t differentiate links only by color</strong>, use also other means (for example an underline) to differentiate them from “normal” text. I guess this goes for color in general: Don’t use color as your primary mean to convey meaning (see also the WCAG Success Criterions “1.3.3 Sensory Characteristics” and “1.4.1 Use of Color”).</li>
+<li><strong>Keep the focus outline on focusable elements</strong> (don’t remove it). If you don’t know why this is important try to use the web for one day without a mouse and only via keyboard – sometimes it’s really annoying having to look through the page and try to guess where the focus just went when you tabbed…</li>
+<li><em>“<strong>everything but content is an enhancement.</strong>”</em> (emphasis mine). This got me thinking. Would my sites work when I disabled JavaScript or even CSS?</li>
+<li><strong>Structure your site/html well</strong>. For example, when creating a blog post, put the date after the title of the post and not before. That way, screen reader users who might navigate by headings will always be able to read the date after the title. Otherwise, they might navigate to a heading/title of the blog post, get intrigued by it and want to read on. Because the date is before the title, they’ll completely miss it. This may not be a deal-breaker but it’s still a thing to improve.</li>
+<li><strong>Use descriptive headings and link texts</strong> (the same goes for buttons and labels). Don’t just use “Read on” for an article for example or a “Buy now”-text for a – well – “Buy now”-Button. Just imagine a list of products and each product comes with its own “Buy now”-Button. What would a screen reader user hear, when he jumps from button to button? Exactly “Button: Buy now”, “Button: Buy now”, …</li>
+<li><strong>Inline SVG seems to be the best solution regarding icons</strong> (such as a “Hamburger-Menu-Icon”). PNGs in image-tags are problematic when a user uses high-contrast-mode (since it doesn’t switch colors), background-images are removed when using High-contrast mode in Windows, Unicode characters might not be supported by the used unicode set, and icon fonts can be problematic when a user sets his own font.</li>
+<li>Very interesting point that I didn’t know: According to <a href="https://www.w3.org/TR/CSS2/ui.html#cursor-props">the CSS-spec</a>, a <strong>cursor of type “pointer”</strong> (the small hand with the pointing finger) <strong>should only be used for links</strong> and not, for example, for buttons.</li>
+<li>This never occurred to me, but <strong>infinite scroll is really annoying for keyboard users</strong> when interactive elements are present in the infinite list. Say we have a list and each item has a link to a detail-page of the element. A keyboard user would tab through the interactive elements, and eventually will reach the list/the link of the item. He tabs through these links until the end of the list and … surprise, surprise, there are more entries loaded dynamically, that means, more links to tab through. On and on until the list is “exhausted”. Not such a great user experience I’d say.</li>
+</ul>
+<h3>Conclusion</h3>
+<p>All in all, I really liked “Inclusive Design Patterns” by Heydon Pickering. In my opinion, the book can be picked up by novices to web accessibility as well as by a bit more experienced developers. If you already have a lot of know-how in the area of accessibility, I wouldn’t recommend this book to you – as you’ll probably know already most of the things presented. But if you’re just starting or are looking to dive deeper into the topic then I think that all the different practical examples and the generally applicable knowledge about web accessibility are a really good resource for you.</p>
+
+  </div>
+</div>
+
+    </div>
+</main>
+</body>
+
+</html>

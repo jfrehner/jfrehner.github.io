@@ -1,0 +1,85 @@
+<!doctype html>
+
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    
+    <meta name="description" content="Personal summary of the most important elements to consider when implementing web accessibility based on the Web Content Accessibility Guidelines 2.1.">
+    
+    <link rel="stylesheet" type="text/css" href="/css/styles.css">
+    <link rel="stylesheet" type="text/css" href="/css/syntax-highlighting.css">
+    <link rel="stylesheet" type="text/css" href="/css/line-numbers-rows.css">
+    <link href="https://fonts.googleapis.com/css?family=Lato:900,400|Zilla+Slab:500&display=swap" rel="stylesheet">
+
+    <title>Jonas Frehner - Software Engineering</title>
+
+</head>
+
+<body class="line-numbers">
+<header>
+    <div class="header-container">
+        <h1 class="site-title hidden-mobile"><a href="/">jonas frehner</a></h1>
+        <h1 class="site-title hidden-desktop"><a href="/">jfrehner</a></h1>
+        <nav>
+            <ul>
+                <li><a  href="/"><span class="center">Blog</span></a></li>
+                <li><a  href="/about"><span class="center">About</span></a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
+<main>
+    <div class="site-container">
+        <div class="single-post-container">
+  <h1 class="post-title">Most important elements to consider when implementing web accessibility (based on WCAG 2.1)</h1>
+  
+  <div class="post-metadata">
+    <p>published: 17.12.2019, 4 minute read
+    </p>
+  </div>
+  <div class="post-content">
+    <h3>Introduction</h3>
+<p>Accessibility (or A11y - as it is often to referred to as well) is quite important for my current work. That's why I invested some time reading the actual &quot;Web Accessibility Content Guidelines&quot; (WCAG) 2.1 and tried to condense all the principles, guidelines and success criterions for level AA into a small list. The result is the below set of the points that I think are the ones which give the biggest return on investment. This list is certainly highly subjective and currently reflects my personal take on WCAG 2.1 and might very well change in the future.</p>
+<h3>Most important elements to consider when implementing web accessibility (based on WCAG 2.1)</h3>
+<ul>
+<li>Pay attention to your <strong>DOM structure</strong> - it should follow the visual order. As a fun experiment you can take your site, strip all css from it, and the content structure should still be the same as before and be in a meaningful way.
+Also make sure that the tab-order is correct. The most important take-away here is to not use a &quot;tabindex&quot; of 1 or greater.</li>
+<li>Non-text elements have a descriptive <strong>non-text alternative</strong>. For example, images have an appropriate &quot;alt&quot; text, input elements are labelled correctly, etc.). As a sidenote: decorative images that should not be &quot;hidden&quot; from assistive technologies (such as screen readers) you can put an empty tag as the alt-text of the image - this will successfully hide the image in the accessibility-tree.</li>
+<li><strong>Use HTML-elements correctly</strong>, perhaps most importantly: use buttons as buttons and links as links and don't mix them up or use divs to create buttons... HTML is by default accessible and provides a lot out of the box that has to be recreated when we use/repurpose div's to buttons, checkboxes, etc..</li>
+<li><strong>Pay attention to contrast</strong>: contrast between interactive elements, links and text and its background should be sufficient.</li>
+<li><strong>Don't disable zoom</strong> (via the meta-tag) and make sure that your web page stays usable when content is zoomed (for example via browser-zoom)</li>
+<li><strong>Do not hide the keyboard focus</strong>. As a keyboard-user, it is quite confusing when you press tab multiple times but are not able to locate the focus on the web page that you read...</li>
+<li><strong>Make forms accessible</strong>. This could be its own article as this can get quite complex and difficult to achieve, but the most important points here are:
+<ul>
+<li>Correctly label form-fields</li>
+<li>Provide accessible hints for an input-field and preferrably provide them <em>before</em> the input-field so that a user of assistive technology knows what format he needs to insert into the input-elements once he gets there.</li>
+<li>Form validation errors should be easily to navigate to, are descriptive (don't just say &quot;Colorname is invalid&quot; be more descriptive e.g. &quot;Colornames cannot contain any numbers&quot;), and can be linked to the form that is erroneous.</li>
+<li>If a form submission would trigger actions that might have legal, financial (e.g. you buy something), or data (e.g. deleting an account) consequences, make sure at least one of the followin is true:
+<ul>
+<li>the submission is reversible</li>
+<li>the data is checked for input error and a possibility exists to correct the errors before submitting the form</li>
+<li>the inserted information can be reviewed, confirmed and corrected before triggering a submission</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>WCAG 2.1 defines four areas which can prevent a whole web page of being accessible. So pay attention that all of the following points are taken care of:
+<ul>
+<li>There should be no keyboard trap. A user should always have the possibility to tap out of an element when he can tap into it.</li>
+<li>There should be no flashes that are known to cause seizures (e.g. never let anything flash three times in any one second period - if you're not a crazy advertiser this should not be a problem, I think?)</li>
+<li>If content automatically moves, blinks, scrolls or auto-updates and is presented in parallel with other content, it can be stopped, paused or hidden.</li>
+<li>If you have audio on your page that automatically plays longer than 3 second, you should provide a mechanism to either pause or stop the audio, or to adjust the audio volume independently from the overall system volume.</li>
+</ul>
+</li>
+</ul>
+
+  </div>
+</div>
+
+    </div>
+</main>
+</body>
+
+</html>
