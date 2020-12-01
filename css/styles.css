@@ -110,6 +110,7 @@ table.checkbox-table {
    padding: 0 5px;
    border-bottom: 1px solid rgb(0, 116, 217);
    position: sticky;
+   top: 0;
    background-color: white;
  }
 
