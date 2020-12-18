@@ -41,7 +41,7 @@ a {
   color: rgb(0, 116, 217);
 }
 
-.site-container li {
+.site-container .single-post-container li {
   margin-top: 1rem;
 }
 
@@ -262,6 +262,10 @@ a.post-teaser__readon:focus {
   margin-bottom: 1rem;
 }
 
+.single-post-container > h2 {
+  margin-top: 0;
+}
+
 .post-metadata p {
   font-size: 1rem;
   color: #757575;
@@ -269,4 +273,38 @@ a.post-teaser__readon:focus {
 
 .post-metadata p {
   margin: 0;
+}
+
+/**
+* Book-list-styles
+*/
+.resource-book {
+  margin: 0;
+}
+
+.book-list > .resource-book {
+  margin-top: 0;
+  margin-bottom: 3rem;
+  list-style-type: none;
+}
+
+.book-list p {
+  margin: 0rem;
+}
+
+.book-title {
+  font-weight: 900;
+}
+
+.book-author {
+  font-style: oblique;
+}
+
+.book-border {
+  border-top: 1px solid rgb(213, 213, 213);
+}
+
+.book-notes {
+  font-size: 1rem;
+  line-height: 1.8rem;
 }
