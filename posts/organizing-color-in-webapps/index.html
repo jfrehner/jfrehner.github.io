@@ -1,0 +1,112 @@
+<!doctype html>
+
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    
+    <meta name="description" content="Personal thoughts and ideas about color organization within a webapp.">
+    
+    <link rel="stylesheet" type="text/css" href="/css/styles.css">
+    <link rel="stylesheet" type="text/css" href="/css/syntax-highlighting.css">
+    <link rel="stylesheet" type="text/css" href="/css/line-numbers-rows.css">
+    <link href="https://fonts.googleapis.com/css?family=Lato:900,400|Zilla+Slab:500&display=swap" rel="stylesheet">
+
+    <title>Jonas Frehner - Software Engineering</title>
+
+</head>
+
+<body class="line-numbers">
+<header>
+    <div class="header-container">
+        <h1 class="site-title hidden-mobile"><a href="/">jonas frehner</a></h1>
+        <h1 class="site-title hidden-desktop"><a href="/">jfrehner</a></h1>
+        <nav>
+            <ul>
+                <li><a  href="/"><span class="center">Blog</span></a></li>
+                <li><a  href="/about"><span class="center">About</span></a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
+<main>
+    <div class="site-container">
+        <div class="single-post-container">
+  <h1 class="post-title">Thoughts and ideas on how to organize color in a webapp</h1>
+  
+  <div class="post-metadata">
+    <p>published: 10.6.2021, 10 minute read
+    </p>
+  </div>
+  <div class="post-content">
+    <h3>The Problem</h3>
+<p>I always asked myself how different colors within a webapp could be organized so that it makes sense and is not overwhelming. In the past, I did not think much about it as my projects always had already a pretty much defined color palette and organized it neatly within various scss-variables.</p>
+<p>But when I encountered a project where we had to build up the app from scratch, I noticed that I didn't like to define the colors &quot;on the fly&quot;. &quot;Oh we need a color for the menu-bar - define one in the menu-bar.scss&quot;, &quot;The footer needs a color? Declare it in the footer.scss&quot; and so on. This leads, consequently, to a beautiful mess - colors defined everywhere, maybe even the same shades that look like they are the same color, but might be off for a little bit etc.</p>
+<p>I saw the problem: colors not defined and used consistently, but I did not know how to solve it. I knew there had to be a systematic approach on how one can organize color. So this post shall outline my ideas and thoughts about how I could define, organize and use color in webapps.
+A word of caution: this is my personal opinion, work in progress and very much subject to change :)</p>
+<h4>Thoughts</h4>
+<p>The following is a collection of knowledge acquired from various articles available online (see at the end for a reference).</p>
+<h5>Color types, color wheel, color palettes</h5>
+<ul>
+<li>The color wheel defines different colors
+<ul>
+<li>primary - yellow, red, blue</li>
+<li>secondary - mixes of primary colors e.g. orange, green</li>
+<li>tertiary - mix of a primary and secondary color e.g. yellow-green</li>
+</ul>
+</li>
+<li>A color palette is a set of colors that work well together.</li>
+<li>There are different types of color palettes (all based on the color wheel):
+<ul>
+<li>Analogous</li>
+<li>Complementary</li>
+<li>Split complementary</li>
+<li>Double complementary (tetradic)</li>
+<li>Triadic</li>
+<li>Monochromatic</li>
+</ul>
+</li>
+</ul>
+<h5>Create and use a color palette</h5>
+<ul>
+<li>Rather use fewer colors - it is easier to create visual hierarchy and contrast with ca. 3 - 5 colors than with more</li>
+<li>Obviously: follow the color guidelines of your brand if there are any</li>
+<li>Choose a color palette type to start with and iterate - change colors, add hues etc. in subsequent iterations if necessary</li>
+<li>60 - 30 - 10 Rule: The dominant color should be used in 60% of cases, the secondary color in 30% and the accent color in around 10% of cases. Reason: this creates a nice balance and prevents a too colorful design</li>
+<li>Pay attention to consistency: if red is used for error-messages, use it consistently for error-messages and not suddenly for a link etc.</li>
+<li>Accent colors should only be used for things that should stand out</li>
+<li>Don't use color alone to convey information - color blind people might not be able to perceive it correctly</li>
+</ul>
+<h5>Visual design</h5>
+<p>This is not strictly only about color, but color plays obviously an important part in visual design.</p>
+<p>Kelly Gordon (2020) mentions five principles</p>
+<ol>
+<li>Use relative size/scale to show importance and rank<br>
+The most important elements need to be the biggest. Gordon suggests using no more than 3 different sizes.</li>
+<li>Provide consistent visual hierarchy<br>
+Guide the eye through the page so that it becomes clear what the importance of specific design elements are. Can be done through size, space, placement, colors etc.</li>
+<li>Provide visual balance (using scale, color etc.) along an imaginary axis</li>
+<li>Use contrast (e.g. in size, color etc.) to signify that elemetns differ</li>
+<li>Use the gestalt principles (e.g. similarity, continuation, proximity etc.)</li>
+</ol>
+<h4>Resources Regarding the Subject</h4>
+<h5>Online Articles</h5>
+<ul>
+<li>Chapman, Cameron (2021), online: <a href="https://www.smashingmagazine.com/2010/02/color-theory-for-designer-part-3-creating-your-own-color-palettes/">Color Theory for Designers</a></li>
+<li>Gordon, Kelly (2020), online: <a href="https://www.nngroup.com/articles/principles-visual-design/">5 Principles of Visual Design in UX</a></li>
+<li>Gordon, Kelly (2021a), online: <a href="https://www.nngroup.com/articles/color-enhance-design/">Using Color to Enhance Your Design</a></li>
+<li>Gordon, Kelly (2021b), online <a href="https://www.nngroup.com/articles/visual-hierarchy-ux-definition/">Visual Hierarchy in UX: Definition</a></li>
+<li>Basak, Artur (2020), online: <a href="https://www.smashingmagazine.com/2020/08/application-color-schemes-css-custom-properties/">How To Configure Application Color Schemes With CSS Custom Properties</a></li>
+</ul>
+<h5>Websites</h5>
+<p>https://www.webstyleguide.com/</p>
+
+  </div>
+</div>
+
+    </div>
+</main>
+</body>
+
+</html>
